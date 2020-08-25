@@ -1,0 +1,36 @@
+<h1 id="h1">Hello</h1>
+<button onclick="change()">Click</button>
+<button onclick="removechange()">remove</button>
+Enter a name :<input type="text" id="name" onchange="changeEvent()">
+<p id="p"></p>
+<style>
+    .c1{
+       color:violet;
+    }
+    .c2{
+        background-color: black;
+    }
+    .c2{
+        text-align: center;
+    }
+</style>
+
+<script>
+    function change(){  
+          var x = document.getElementById("h1").classList.add("c1" ,"c2")
+          var y = document.getElementById("h1").classList.length;
+          var z = document.getElementById("h1").classList.item(1);
+          document.getElementById("p").innerHTML = y +" "+ z;
+          
+
+    }
+    function removechange(){
+        var x = document.getElementById("h1").classList.remove("c1" ,"c2")
+    }
+
+    function changeEvent(){
+        var a = document.getElementById("name");
+        a.value = a.value.toUpperCase()
+        a.style.color ="orange"
+    }
+</script>

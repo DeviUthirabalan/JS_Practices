@@ -1,0 +1,92 @@
+*{
+    margin :0;
+    padding :0
+}
+#navigation{
+    position: sticky;
+    top:0;
+    z-index: 10;
+    height:-20px;
+}
+
+
+#navigation .navbar-brand img{
+    height : 30px;
+    padding-left:30px
+
+}
+#navigation .navbar-nav li {
+    padding :0 10px;
+
+}
+#navigation .navbar-nav li a{
+    float:right;
+    text-align:left
+}
+#navigation .navbar-nav li a:hover{
+    color:#007bff!important;
+}
+#navigation .navbar{
+    background-color: #fff;
+}
+#navigation .navbar-toggler{
+    border:none!important
+}
+#navigation .nav-link{
+   color:#555!important;
+   font-weight:600;
+   font-size: 16px;
+}
+
+#home{
+    background: url(Images/home.jpg) no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+    width:100%;
+    background-position: center;
+    overflow:hidden
+}
+#home .container{
+    height: 100hv;
+    text-align: left;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 20%; */
+    color:#fff;
+    
+
+}
+#home h1{
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+
+}
+#home p{
+    font-size: 30px;
+    letter-spacing: 5px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+    font-weight: 500;
+}
+
+#about{
+    display: inline-flex;
+    flex-direction: column;
+}
+/* .skills{
+    width: 20px;
+    height: 20px;;
+}*/
+.logos img{
+    padding-top:1% ;
+    padding-left: 2%;
+    padding-bottom: 1%;
+}
+/* .skills img{
+    width:"10px"; height:"10px"
+} */

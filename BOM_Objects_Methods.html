@@ -1,0 +1,59 @@
+<h1 id="h"></h1>
+<h1 id="p"></h1>
+<h1 id="p1"></h1>
+<h1 id="c"> </h1>
+
+<button onclick="newTab()">New Tab</button>
+<button onclick="close()">close</button>
+<button onclick="newWindow()">New window</button>
+<button onclick="link()">link of the page</button>
+<button onclick="assign()">assign</button>
+<button onclick="back()">back</button>
+<button onclick="forward()">forward</button>
+<button onclick="cookieStatus()">cookieStatus</button>
+<a href="https://www.facebook.com/">fb</a>
+<script>
+    function newTab(){
+     w = window.open("https://www.google.com/")
+
+    }
+ function newWindow(){
+     w = window.open("https://www.google.com/","new window",width =50 ,height = 20)
+     w.moveTo(10,10);
+     w.focus();
+ }
+    function close(){
+      w.close
+    }
+
+
+    // --------------------Screen obj----------
+    function link(){
+    // document.getElementById("p").innerHTML = window.location.href;
+    // document.getElementById("p").innerHTML = window.location.pathname;
+    document.getElementById("p").innerHTML = window.location.protocol;
+    // document.getElementById("p").innerHTML = window.location.hostname;
+    // document.getElementById("p").innerHTML = window.location.host;
+    }
+    function assign(){
+      document.getElementById("p1").innerHTML = window.location.assign(www.google.com)
+    }
+    function back(){
+      window.history.back();
+    }
+    function forward(){
+      window.history.forward();
+    }
+    function cookieStatus(){
+      // document.getElementById("c").innerHTML=navigator.cookieEnabled;
+      // document.getElementById("c").innerHTML=navigator.appName;
+      document.getElementById("c").innerHTML=navigator.appCodeName;
+      document.getElementById("c").innerHTML=navigator.product;
+      document.getElementById("c").innerHTML=navigator.appVersion;
+      document.getElementById("c").innerHTML=navigator.platform;
+      document.getElementById("c").innerHTML=navigator.javaEnabled;
+      document.getElementById("c").innerHTML=navigator.language;
+      document.getElementById("c").innerHTML=navigator.onLine;
+    }
+    
+</script>

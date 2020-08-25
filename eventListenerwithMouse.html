@@ -1,0 +1,46 @@
+<html>
+    <button id="btn">Try it</button>
+    <p id="demo"></p><br>
+    <p id="randomNum"></p>
+    <p id="length"></p>
+
+<script>
+    var nodeList = document.querySelectorAll("button");
+    document.getElementById("length").innerHTML = nodeList.length;
+    window.addEventListener("resize" ,function(){
+        document.getElementById("randomNum").innerHTML = Math.random();
+    });
+    let buttonActivity = document.getElementById("btn")
+
+    buttonActivity.addEventListener("mouseout",mouseOutFunction)
+    buttonActivity.addEventListener("mousedown" ,mouseDownFunction)
+    buttonActivity.addEventListener("mouseover" ,mouseOverFunction)
+    // buttonActivity.addEventListener("mouseleave" ,mouseLeaveFunction)
+    // buttonActivity.addEventListener("mousemove" ,mouseMoveFunction)
+    buttonActivity.addEventListener("mouseenter" ,mouseEnterFunction)
+    buttonActivity.addEventListener("mouseup" ,mouseUpFunction)
+
+    function mouseOutFunction(){
+             document.getElementById("demo").innerHTML += "MouseOut! <br>"
+    }
+    function mouseDownFunction(){
+             document.getElementById("demo").innerHTML += "MouseDown!<br>"
+    }
+    function mouseOverFunction(){
+             document.getElementById("demo").innerHTML += "MouseOver!<br>"
+    }
+    // function mouseMoveFunction(){
+    //          document.getElementById("demo").innerHTML = "MouseMove!"   mouse over and move same
+    // }
+    // function mouseLeaveFunction(){                    leave & out samee
+    //          document.getElementById("demo").innerHTML = "MouseLeave!"
+    // }
+    function mouseEnterFunction(){
+             document.getElementById("demo").innerHTML += "MouseEnter!<br>"
+    }
+    function mouseUpFunction(){
+             document.getElementById("demo").innerHTML += "MouseUp!<br>"
+    }
+   
+</script>
+</html>

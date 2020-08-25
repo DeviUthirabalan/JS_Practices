@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></head>
+<div class="container">
+    <input type="checkbox" id="checkbox">
+    <label for ="checkbox">
+      <p>LI|</p>
+      <p>|DA</p>
+       <div class="ball"></div>
+    </label>
+</div>
+<style>
+    body{
+        display:flex;
+    }
+    #checkbox{
+        opacity: 0;
+        position: absolute;
+    }
+    #checkbox:checked +.label .ball{
+        transform: translate(24px);
+    }
+    label{
+        display: flex;
+        width:15;
+        height:20px;
+        background-color:#999;
+        justify-content: space-between;
+        position: relative;  
+        border-radius: 50px;
+        padding-top: 0px;
+
+    }
+    .ball{
+        background-color: lawngreen;
+        border-radius: 50px;
+        position: absolute;
+        height:22px;
+        width: 22px;
+        border-radius: 50%;
+        margin-top: 0px;
+        transition: transform 0.2s linear;
+
+
+    }
+</style>

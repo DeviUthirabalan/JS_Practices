@@ -1,0 +1,19 @@
+<html>
+    <p id="para"></p>
+    <p id="para2"></p>
+</html>
+<script>
+    var array = [1,2,3]
+    document.getElementById("para").innerHTML = array.reduce(total)
+    function total(existingNumbers , addedNumber){
+        return existingNumbers + addedNumber
+
+    }
+
+    document.getElementById("para2").innerHTML = array.reduceRight(sub)
+    function sub(existingNumbers , subtractedNumber){
+        return existingNumbers - subtractedNumber;
+
+    }
+        
+</script>

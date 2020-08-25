@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<input type="text" class="text" id="answer"  onkeypress="copyOfElementWithValue(event)">
+<p id="DomElementPresent">Element present</p>
+<button onclick="removeElement()">Remove</button>
+
+<button onclick="addElement()">Add</button>
+
+
+<!-- <input type="text" id="duplicateAnswer"> -->
+<!-- <p id="duplicateAnswerInPTag"></p> -->
+
+<!-- <button type="submit" onclick="duplicateTheValue()">Clone</button>  -->
+<script> 
+
+    function removeElement(){
+        let removePara = document.getElementById('DomElementPresent')
+        removePara.remove()
+    }
+   function addElement(){
+        let addPara = document.createElement('p')
+        addPara.setAttribute("id","DomElementPresent")
+        addPara.innerHTML = "Element Present";
+        if(!document.contains(document.getElementById('DomElementPresent'))){  
+            document.body.appendChild(addPara);    
+             
+         }
+
+    }
+    var x;
+    function duplicateTheValue(){
+         x = document.getElementById('answer').value; 
+        // document.getElementById('duplicateAnswer').value = x;
+        // document.getElementById('duplicateAnswerInPTag').innerHTML = x;
+        
+        console.log(x);
+        // Window.document.write(x)
+   }
+//    function emptyValue(){
+//     // var x = document.getElementById('answer').value = null
+//     document.getElementById('duplicateAnswer').value = null;
+//     document.getElementById('duplicateAnswerInPTag').innerHTML = null;
+   
+//    }
+   function copyOfElementWithValue(e){
+    x = document.getElementById('answer').value; 
+       console.log(e.keyCode)
+        if(e.keyCode == 13) {
+            var y = document.createElement("INPUT");
+            y.setAttribute("type", "text");
+            y.setAttribute("id", "dynamicallyCreatedInput");
+            y.setAttribute("value",x);
+           let isPresent = document.contains(document.getElementById('dynamicallyCreatedInput'))
+            if(!isPresent){       
+               document.body.appendChild(y);
+            }
+        }
+    // var x = document.getElementById('answer').value; 
+
+   }
+    
+</script>
+<!-- <script>
+    window.onload = function(){ 
+        var x = document.getElementById('answer'),
+        y = document.getElementById('duplicateAnswer');
+
+        x.addEventListener('input',function(){
+        x.value = y.value
+        console.log(x.value,y.value);
+    });
+};
+   
+</script> -->

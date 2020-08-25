@@ -1,0 +1,206 @@
+<html>
+    <body>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>  
+      <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/addons/p5.dom.min.js"></script>   -->
+        <script>
+         class Employee {
+             constructor(name,id){
+                this.name = name;
+                this.id = id;
+
+             }
+             EmpDetails(){
+                 document.write(this.id+ " "+ this.name+"<br>")
+             }
+             Empname(){
+                 document.write(this.name)
+             }
+                 
+         }
+         var emp1 = new Employee(1,"devi")
+         var emp2 = new Employee("shree")
+        emp1.EmpDetails();
+        emp2.Empname();
+
+        </script><br>
+        <!-- Encapsulation -->
+       <script> 
+            class Student{
+                StudentDetails(name,marks){
+                    this.name =name;
+                    this.marks = marks;
+                }
+                getName(){
+                    return this.name;
+                }
+                setName(name){
+                    this.name = name;
+                }
+                getMarks(){
+                    return this.marks;
+                }
+                setMarks(marks){
+                    if(marks<0 || marks >100){
+                        alert("invalid marks")
+                        
+                    }else{
+                        this.marks = marks;
+                    }
+                    
+                }
+            }
+            var stu = new Student();
+            stu.setName("Devi");
+            stu.setMarks(100);
+            document.write(stu.getName()+" "+stu.getMarks())
+        </script><br> 
+
+
+<!-- prototype approach in Encapsulation -->
+    <script>
+        function student(name,grade){
+            var name= name;
+            var grade = 2;
+            Object.defineProperty(this,"name",{
+                get:function(){
+                    return name
+                },
+                set:function(){
+                    this.name = name
+                }
+            });
+
+            Object.defineProperty(this,"grade",{
+                get:function(){
+                    return grade;
+                },
+                set:function(){
+                    this.grade = grade
+                }
+            });
+          }
+        var s = new student("bob",2)
+        document.write(s.name+" "+s.grade)
+
+    </script><br>
+    <!-- shape_circle inc,dec -->
+    <script>
+        var shape;
+
+        function setup(){
+            createButton("increse size").mousePressed(onclickInc);
+            createButton("decrease size").mousePressed(onclickDec);
+            createP(" ");
+            createCanvas(200,200);
+             shape = new ShapeObject();
+
+             function draw(){
+                 clear();   //to clear the bg
+                 shape.draw(width/2,height/2)
+             };
+             function onclickInc(){
+                 shape.inc(10);
+             }
+             function onclickDec(){
+                 shape.dec(10)
+             }
+             function ShapeObject(){
+                 this.radius =50;
+             }
+             ShapeObject.prototype.inc = function(n){
+                 this.radius += n;
+             }
+             ShapeObject.prototype.dec = function(n){
+                 this.radius -= n;
+             }
+             ShapeObject.prototype.draw =function(x,y){
+                 ellipse(x,y,this.radius*2,this.radius*2)
+             }
+        }
+    </script>
+    <!-- inheritance -->
+
+    <script>
+        class Car{
+            setName(name){
+                this.name = name;
+            }
+            StartEngine(){
+                document.write("Engine started for " + this.name +"<br>")
+            }
+            StopEngine(){
+                document.write("Engine stopped" + this.name+"<br>")
+            }
+
+
+        }
+        class Benz extends Car{
+            setSpeed(speed){
+                this.speed = speed;
+                document.write("speed of "+ this.name + "is" +" "+speed)
+            }
+
+        }
+    let myCar = new Benz();
+    myCar.setName("Benz2020");
+    myCar.StartEngine();
+    myCar.StopEngine();
+    myCar.setSpeed(250)
+
+    </script><br>
+
+    <!-- inherotance with super keyword -->
+    <script>
+        class Bike{
+            constructor(){
+                 this.company = "honda";
+            }
+        }
+        class myBike extends Bike{
+            constructor(name,price){
+                super();
+                this.name = name;
+                this.price = price
+            }
+        }
+        var b = new myBike("RoyalEnfield",100000)
+        document.write(b.name + " "+b.price+" "+b.company)
+    </script><br>
+    <script>
+        const candidate ={
+            FirstName : "Devi",
+            LastName : "shree",
+            getFullName(){
+            // document.write( "${this.FirstName}  ${this.LastName}");
+            document.write(this.FirstName + " " + this.LastName +"<br>")
+            }
+        };
+        const developer ={
+            FirstName : "Shree",
+            LastName : "Devi"
+        }
+
+        developer.__proto__= candidate;   //assigning prototype of parent obj to child
+        developer.getFullName();
+        candidate.getFullName();     
+    </script><br>
+    <script>
+        function bike(company){
+            this.company = company;
+        }
+
+        bike.prototype.getCompany = function(){
+            return this.company;
+        }
+        function vechilce(name,price){
+            this.name =name;
+            this.price =price;
+        }
+         var bike = new bike("honda");
+         vechilce.prototype = bike;
+         var vechilce = new vechilce("activa","20000");
+         document.write(vechilce.getCompany()+" "+ vechilce.name + " "+vechilce.price)
+
+    </script>
+    </body>
+</html>

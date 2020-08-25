@@ -1,0 +1,32 @@
+<h1 id="h1">Enter your Name</h1>
+<h1 id="h2">click continue</h1>
+<h1 id="h3"></h1>
+<h4 id="h4">hello<strong>World</strong></h4>
+<button onclick="view()">
+    view
+</button>
+<button onclick="on()">Continue</button>
+
+
+<script>
+    function on(){
+    var c = document.getElementById("h1").innerHTML;
+    var d = document.getElementById("h2").innerHTML;
+    var e =  "success";
+    document.getElementById("h3").innerHTML = e;
+    document.getElementById("h1").innerHTML = " ";
+    document.getElementById("h2").innerHTML = " ";
+   
+    }
+    function view(){
+        var f =  document.getElementById("h4");
+    console.log(f.innerHTML);
+    console.log(f.innerText);
+    console.log(f.outerHTML);
+    console.log(f.textContent);
+
+    }
+
+
+    
+</script>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<p id="text">To stop the blinking click the button</p>
+<button id="stop" onclick="stopBlinking()">Stop Blinking</button><br><br>
+<div id="myProgress">
+    <div id="myBar"></div>
+</div><br>
+<div id="myProgress2">
+    <div id="myBar2"></div>
+</div><br>
+<button onclick="move()">Performance</button>
+
+<style>
+    #myProgress,#myProgress2{
+        width :100%;
+        height:10px;
+        background-color: #ddd;
+        position: relative;
+        border-radius:10px;
+    }
+    #myBar,#myBar2{
+        background-color: lawngreen;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        border-radius:10px;
+    }
+    
+</style>
+<body>
+ 
+
+<script>
+    let Timer = setInterval(setColor,1000)
+    let x = document.body;
+    function  setColor() {
+        
+         let y = document.getElementById("text");
+         y.style.color= y.style.color =="white"?"blue":"white";
+        x.style.backgroundColor =  x.style.backgroundColor == "yellow" ? "pink" :"yellow";
+
+        // if(x.style.backgroundColor == "yellow"){
+        //     x.style.backgroundColor = "pink"
+        // }else{
+        //     x.style.backgroundColor = "yellow"
+        // }
+    }
+    function stopBlinking(){
+        clearInterval(Timer)
+    }
+
+    function move(){
+        let element = document.getElementById("myBar");
+        let element1 = document.getElementById("myBar2");
+        let width = 0 ;
+        let width2 = 0 ;
+        let id = setInterval(frame,10);
+        let id1 = setInterval(frame1,10);
+        function frame(){
+           if(width == 100){
+               clearInterval(id)
+           }
+           else{
+               element.style.width = width + '%';
+               width++;
+           }
+
+        }
+        function frame1(){
+           if(width2 == 30){
+               clearInterval(id1)
+           }
+           else{
+               element1.style.width = width2 + '%';
+               width2++;
+           }
+        }        
+    
+        //     let element2 = document.getElementById("myBar2") 
+        //     let width2 = 0 ;
+        //     let id2 = setInterval(frame2,10);
+        //     function frame2(){
+        //    if(width == 30){
+        //        clearInterval(id2)
+        //    }
+        //    else{
+        //        width++;
+        //        element2.style.width = width + '%';
+        //    }
+       // }        
+
+    }
+
+ 
+</script>
+</body>

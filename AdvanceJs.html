@@ -1,0 +1,12 @@
+<html>
+    <script>
+        var car = {
+            name :"Benzz",
+            model :"A1",
+
+        }
+        console.log(Object.getOwnPropertyDescriptor(car,"name"));
+        console.log(Object.defineProperty(car,"name", {writable :false}));
+        car.name ="Audi"
+    </script>
+</html>

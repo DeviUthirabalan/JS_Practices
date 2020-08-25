@@ -1,0 +1,38 @@
+<!-- popup methods -->
+<button onclick="promptBox()">Prompt</button>
+<p id="output"></p>
+<button onclick=setTimeout(alertBox,3000)>Alert</button><br><br>
+<button onclick="confirmBox()">Confirm</button>
+<p id="text"></p>
+
+<script>
+   
+    
+    function promptBox(){
+        user = prompt("please enter your name","")
+        var output;
+        if(user == null || user == 0){
+        output = "you canceled the welcome Box";
+    }
+    else{
+        output = "hello" + " "+user + " "+"welcome!!!"
+    }
+    document.getElementById("output").innerHTML = output;
+    }
+
+    function alertBox(){
+        setTimeout(3000)
+        window.alert("thankyou")
+    }
+
+    function confirmBox(){
+        let text;
+        if(confirm("clik me to continue")){
+            text = "u clicked confirm"
+        }
+        else{
+           text="u clicked cancel" ;
+        }
+        document.getElementById("text").innerHTML = text;
+    }
+</script>

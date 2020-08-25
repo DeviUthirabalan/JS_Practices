@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<h2>Add & Remove EventListener</h2>
+<p id="para">click the button to stop</p>
+<p id="Number"></p>
+<button onclick="removeHandler()">stop random numbers</button>
+
+<div class="container">
+ 
+        <p id="timer"></p>
+    
+    <button id="start" onclick="timerTest = setInterval(updateCountDown,1000)">Start</button>
+    <button id="stop" onclick="clearInterval(timerTest)">Stop</button>
+    <!-- <div class="buttons p-8">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+        <button onclick="removeHandler()">StopEvent</button>
+    </div> -->
+</div>
+
+<!-- 
+<div class="stopWatch">
+<button id="start" onclick="stopWatch.start()">Start Test</button>
+<button id="stop" onclick="stopWatch.stop()">Submit Test</button>
+<p id="results"></p>
+</div> -->
+
+<script>
+    let time = startingMinutes * 60;
+    const startingMinutes = 10 ;
+    //  setInterval (updateCountDown,1000)
+    
+    function  updateCountDown() {
+        //  setInterval (updateCountDown,1000)
+        const countdownElement = document.getElementById('timer')
+             let minutes = Math.floor(time / 60)
+             let seconds = time % 60;
+        
+         seconds = seconds < 10 ? '0' + seconds : seconds
+        //  countdownElement.innerHTML = `${minutes}:${seconds}`
+         countdownElement.innerHTML = minutes +":" +seconds;
+         time--;  
+         }
+        
+     
+    document.getElementById('para').addEventListener("mousemove",changeAttribute)
+
+        function  changeAttribute(){
+               document.getElementById('Number').innerHTML = Math.random()  
+
+           }
+        function removeHandler() {
+            document.getElementById('para').removeEventListener("mousemove",changeAttribute)
+            document.getElementById('para').innerHTML = "Success";
+            
+        } 
+
+
+    </script>
+<!-- //         class stopWatch{
+//             constructor(display,results){
+//                 this.display = display;
+//                 this.results = results;
+//                 this.running = false;
+//                 this.print(this.times)
+//             }
+//             reset(){
+//                 this.times=[0,0,0]
+//             }
+//             start(){
+//                 if (!this.time) this.time = performance.now();
+//                 if (!this.running) {
+//                  this.running = true;
+//             requestAnimationFrame(this.step.bind(this));
+//             }
+//             }
+//             stop() {
+//                this.running = false;
+//                 this.time = null;
+//         }
+//         step(timestamp) {
+//              if (!this.running) return;
+//              this.calculate(timestamp);
+//              this.time = timestamp;
+//              this.print();
+//                  requestAnimationFrame(this.step.bind(this));
+   
+//   }
+            
+      //  }
+  
+ -->

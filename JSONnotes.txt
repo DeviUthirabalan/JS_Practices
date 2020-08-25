@@ -1,0 +1,15 @@
+JSON -- Data transmit from 
+             Server ------> web Application
+             alter to XML
+             light weoght data interchange 
+             Subset of JS
+             easy to read and write
+
+
+JSON DT:
+  Number
+  String
+  Boolean
+  Array
+  Object
+  Null

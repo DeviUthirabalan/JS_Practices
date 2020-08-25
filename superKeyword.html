@@ -1,0 +1,24 @@
+<html>
+    <p class="" id="output"></p>
+    <script>
+        class Company{
+            constructor(){
+                this.company = "google";
+
+            }
+        }
+
+        class Employee extends Company{
+            constructor(id,name){
+                super();
+                this.id =id;
+                this.name =name;
+            }
+            
+        }
+
+ let emp = new Employee('123' ,'Devi')
+//  document.getElementById("output").innerHtml = emp.company + " "+ emp.id + " "+emp.name
+document.writeln(emp.company + " "+ emp.id + " "+emp.name)
+    </script>
+</html>

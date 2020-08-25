@@ -1,0 +1,18 @@
+{
+    "student" : [
+
+        {
+        "name":"abc",
+        "subject" :"Science"
+        },
+        {
+            "name":"xyz",
+            "subject" :"Math"
+        },
+        {
+            "name":"prq",
+            "subject" :"English"
+        }
+           
+    ]
+}

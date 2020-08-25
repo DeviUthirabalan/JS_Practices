@@ -1,0 +1,21 @@
+<html>
+    <button id="btn" onclick="on()">click me</button>
+    <p id="count"></p>
+</html>
+
+<script>
+
+    var add = (function (){
+        var counter = 0 ;
+        return function(){
+            counter += 1;
+            return counter;
+        }
+    
+    })();
+
+    function on(){
+        document.getElementById("count").innerHTML = add();
+    }
+</script>
+

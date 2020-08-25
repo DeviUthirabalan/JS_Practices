@@ -1,0 +1,13 @@
+<htnl>
+    <script>
+        var a = new XMLHttpRequest();  //sending req to server
+        a.onreadystatechange = function(){
+            if(this.readystate == 4 && this.status == 200){
+               var a2 = a.responseText;   //return the server info as string
+               console.log(a2);    
+            }
+        };
+        a.open("GET","Test.json",true)
+        a.send();
+    </script>
+</htnl>

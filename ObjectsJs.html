@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<p id = "Employee"></p>
+<p id = "Employeename"></p>
+<p id = "detailSummary"></p>
+<p id="CurrentEmployee"></p>
+<p id="currentEmployeeDetails"></p>
+<p id="genderUpperCase"></p>
+
+<p id="newEmp"></p>
+<script>
+    let detailSummary = "";
+    let employee = {                            //emp1
+        firstName : "Devi",
+        lastName  :"Shree",
+        gender :" ",
+        role : "Software Developer",
+        set genderCase(genderCase){
+           
+           this.gender = genderCase.toUpperCase()
+        //    console.log(gender)
+        },
+        fullName : function (){
+            return this.firstName + employee.lastName
+        }
+
+        }
+        employee.designation = function(){
+           return this.role;
+    }
+    // let employee2 = {                               //emp2
+    //     firstName : "Devi",
+    //     lastName  :"Balan",
+    //     gender :"Female",
+    //     role : "Software Developer2",
+    // }
+    employee.genderCase="female"
+    employee.salary = "20LPA"  //adding property
+    // delete employee.gender ;    // delete 
+    // employee.gender = " ";      //remove
+    employee.role = "Senior Software Developer2" //update
+    var i ;
+
+    for(i in employee){
+        // if()
+          detailSummary += employee[i] +" <br>" 
+    }
+
+    document.getElementById("Employee").innerHTML = "name :" + employee.firstName +"<br>"+"salary :" + employee.salary +"<br>"+ "gender :" + employee.gender 
+    +"<br>" + "role :" + employee.role;
+
+    document.getElementById("Employeename").innerText = employee.fullName()+"__" + employee.designation();
+    document.getElementById("detailSummary").innerHTML = detailSummary;
+    document.getElementById("genderUpperCase").innerHTML = employee.gender;
+//--------------------------------------------------------------------
+//     let currentEmployee = "";
+//     let employeeList = {
+//       name   : ["Devi" , "shree" ,"Angel"],
+//       salary : ["10" ,"20" ,"30"],
+//       role   : ["SE1","SE2","SE3"]
+//     }
+//     console.log(currentEmployee)
+//     let j = 0 ;
+//     for(j in employeeList){
+//         //console.log(employeeList.name[0])
+//         if(j == 1)
+//          currentEmployee += employeeList[j] + "<br>"
+//          console.log(currentEmployee)
+//     }
+
+//    document.getElementById("CurrentEmployee").innerHTML = currentEmployee;
+//    console.log(currentEmployee)
+//___________________________________________________________________________________
+
+let currentEmployeeDetails = "";
+    let employeeList =  {name:"devi , shree" , gender :"female ,female" , grade : "1 ,2"}
+    let employeeListArr =  ["devi","shree","angel"]
+                        
+    let employeeListString = JSON.stringify(employeeListArr)
+    let empArray = Object.values(employeeList)     //obj to array
+    let empString = JSON.stringify(employeeList)   //obj to string
+    var k = 1;
+    for (k in employeeList)
+        currentEmployeeDetails += employeeList[1] + "<br>"
+    // document.getElementById("currentEmployeeDetails").innerHTML = empArray;
+    document.getElementById("currentEmployeeDetails").innerHTML = employeeListString;
+
+// --------------------------------------------------------------------------------------------
+function Emp(lastExp,notice){
+    this.experience = lastExp,
+    this.NoticePeriod = notice,
+    this.organization ="ZOHO"
+    this.changeExperience = function(exp){
+        this.experience = exp
+    }
+} 
+var emp1 = new Emp('developer','15days');                                   
+var emp2 = new Emp('intern','10days');
+var emp3 = new Number(68)
+var emp4 = new Boolean(1)
+console.log(emp3);
+  
+
+emp1.nationality = "Indian";
+// emp1.experience = "2years"
+ emp1.changeExperience("2years as a developer")
+
+emp1.name = function(){
+    return "Devi";
+}
+ console.log(emp1.NoticePeriod);
+ document.getElementById("newEmp").innerHTML = emp1.NoticePeriod +"<br>"+emp1.nationality +" "+ emp1.name() +" "+emp1.experience  + " "+ emp1.organization;
+ console.log(emp1.NoticePeriod); 
+
+ var candidate = {
+     name : "abc",
+     age  : 16,
+     vote :function(){
+         console.log("Eligible");
+     }
+ };
+ console.log(candidate.age);
+ if(candidate.age >= 18){
+     candidate.vote()
+ }else{
+     console.log("not Eligible");
+ }
+
+//  ______________________________________________________
+
+function call(){
+    var obj = new Object()    //object creation
+    obj.name="xyz";
+    obj.age=20;
+    return obj;
+}
+// ______________________
+function call1(){
+    var obj = {};   //object creation
+    obj.name="xyz";
+    obj.age=20;
+    return obj;
+}
+
+// ___________________________
+function call2(){
+    var obj2 = {};   //object creation
+    obj2['name']="xyz";
+    obj2['age']=20;
+    return obj2;
+}
+
+console.log(call1());
+console.log(call());
+console.log(call2());
+// ---------------------------------------------
+
+
+
+
+    </script>
+
+
+    
