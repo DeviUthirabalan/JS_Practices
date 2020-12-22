@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <style>
+        #circle{
+            width: 100px;
+            height: 100px;
+            left:0px;
+            background-color: red;
+            position: relative;
+            border-radius: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="circle"></div>
+   
+    <script>
+        var circle = 0;
+        var move   = setInterval(movingLeft,50);
+        function movingLeft(){
+            if(circle >= (4000/50)){
+                document.getElementById("circle").style.backgroundColor="pink";
+                clearInterval(move)
+            }else{
+                circle++;
+            document.getElementById("circle").style.left = circle + "px";
+            }
+            
+        }
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Animation</title>
+</head>
+<body>
+    <div id="circle"></div>
+    <style>
+           #circle{
+            width: 100px;
+            height: 100px;
+            left:0px;
+            background-color: rgb(231, 14, 14);
+            position: relative;
+            border-radius: 50%;
+        }
+    </style>
+    <script>
+        var circle = 0;
+        var circleInterval;
+        var isPlaying = false;
+        var width =0;
+        var height =0;
+
+        function circleAnimation(time){
+            circle++;
+            height++;
+            width++;
+            document.getElementById("circle").style.left = circle + "px";
+            document.getElementById("circle").style.width = width + "px";
+            document.getElementById("circle").style.height = height + "px";
+            circleInterval = requestAnimationFrame(circleAnimation);
+           
+        } 
+
+    function mouseClicked(){
+        if(isPlaying){
+            isPlaying = false;
+            document.getElementById("circle").style.backgroundColor ="grey";
+            cancelAnimationFrame(circleInterval);
+        }
+        else{
+            isPlaying = true;
+            document.getElementById("circle").style.backgroundColor = "green"
+            circleInterval = requestAnimationFrame(circleAnimation)
+        }
+    }
+    document.getElementById("circle").addEventListener("click",mouseClicked)
+    </script>
+    
+</body>
+</html>
